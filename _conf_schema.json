@@ -1,0 +1,152 @@
+{
+    "rcon_enabled": {
+        "description": "启用 RCON 连接",
+        "type": "bool",
+        "hint": "是否启用 MC 服务器 RCON 远程控制功能",
+        "default": true
+    },
+    "rcon_host": {
+        "description": "RCON 服务器地址（兼容旧版）",
+        "type": "string",
+        "hint": "Minecraft 服务器 IP 或域名",
+        "default": "127.0.0.1"
+    },
+    "rcon_port": {
+        "description": "RCON 端口（兼容旧版）",
+        "type": "int",
+        "hint": "RCON 端口，默认 25575",
+        "default": 25575
+    },
+    "rcon_password": {
+        "description": "RCON 密码（兼容旧版）",
+        "type": "string",
+        "obvious_hint": true,
+        "hint": "在 server.properties 中设置的 rcon.password"
+    },
+    "rcon_timeout": {
+        "description": "RCON 超时时间（秒）",
+        "type": "int",
+        "hint": "连接和指令执行的超时时间",
+        "default": 10
+    },
+    "admin_only_commands": {
+        "description": "仅管理员可执行指令",
+        "type": "bool",
+        "hint": "开启后，/mc 指令只有管理员才能使用",
+        "default": true
+    },
+    "default_server": {
+        "description": "默认服务器名称",
+        "type": "string",
+        "hint": "当使用 /mc 时不指定服务器时的默认目标",
+        "default": "default"
+    },
+    "servers": {
+        "description": "多服务器配置（高级）",
+        "type": "list",
+        "hint": "可配置多个 MC 服务器，格式: 名称=地址:端口:密码",
+        "default": []
+    },
+    "auto_backup": {
+        "description": "启用自动备份",
+        "type": "bool",
+        "hint": "定时执行 save-all 自动备份",
+        "default": false
+    },
+    "backup_interval_minutes": {
+        "description": "自动备份间隔（分钟）",
+        "type": "int",
+        "hint": "自动备份执行的时间间隔",
+        "default": 60
+    },
+    "enable_announce": {
+        "description": "启用自动公告",
+        "type": "bool",
+        "hint": "定时向服务器发送公告消息",
+        "default": false
+    },
+    "announce_interval_minutes": {
+        "description": "公告间隔（分钟）",
+        "type": "int",
+        "hint": "每条公告发送的间隔时间",
+        "default": 30
+    },
+    "announcements": {
+        "description": "公告内容列表",
+        "type": "list",
+        "hint": "自动循环发送的公告内容",
+        "default": []
+    },
+    "enable_monitor": {
+        "description": "启用性能监控",
+        "type": "bool",
+        "hint": "允许使用 /mc monitor 查看 TPS/内存/实体",
+        "default": false
+    },
+    "monitor_interval_seconds": {
+        "description": "监控数据刷新间隔（秒）",
+        "type": "int",
+        "hint": "性能监控相关的时间间隔",
+        "default": 60
+    },
+    "enable_llm_tool": {
+        "description": "启用 AI 自然语言控制",
+        "type": "bool",
+        "hint": "允许使用 /mc ai <自然语言> 让 AI 帮你执行指令",
+        "default": true
+    },
+    "enable_chat_bridge": {
+        "description": "启用 QQ ↔ MC 聊天桥接",
+        "type": "bool",
+        "hint": "允许 QQ 群消息转发到 MC 服务器",
+        "default": false
+    },
+    "bridge_qq_to_mc": {
+        "description": "QQ -> MC 转发",
+        "type": "bool",
+        "hint": "允许 QQ 群消息转发到 MC 服务器",
+        "default": true
+    },
+    "bridge_mc_to_qq": {
+        "description": "MC -> QQ 转发",
+        "type": "bool",
+        "hint": "允许 MC 玩家聊天消息转发到 QQ 群（需要服务端 mod 推送）",
+        "default": true
+    },
+    "bridge_listen_host": {
+        "description": "桥接 TCP 监听地址",
+        "type": "string",
+        "hint": "MC 服务端 mod 连接的本地地址",
+        "default": "127.0.0.1"
+    },
+    "bridge_listen_port": {
+        "description": "桥接 TCP 监听端口",
+        "type": "int",
+        "hint": "MC 服务端 mod 连接的本地端口，默认 25576",
+        "default": 25576
+    },
+    "bridge_qq_group": {
+        "description": "目标 QQ 群号",
+        "type": "string",
+        "hint": "MC 聊天消息转发到的 QQ 群号，空则转发到触发命令的群",
+        "default": ""
+    },
+    "bridge_format_qq": {
+        "description": "QQ -> MC 消息格式",
+        "type": "text",
+        "hint": "可用变量: {nick}, {msg}",
+        "default": "[QQ]{nick}: {msg}"
+    },
+    "bridge_format_mc": {
+        "description": "MC -> QQ 消息格式",
+        "type": "text",
+        "hint": "可用变量: {player}, {msg}",
+        "default": "[MC]{player}: {msg}"
+    },
+    "bridge_tellraw_template": {
+        "description": "QQ -> MC tellraw JSON 模板",
+        "type": "text",
+        "hint": "可用变量: {text}, {color}",
+        "default": "{{\"text\": \"{text}\", \"color\": \"{color}\", \"italic\": true}}"
+    }
+}

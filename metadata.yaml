@@ -1,0 +1,14 @@
+name: "astrbot_plugin_minecraft"
+display_name: "Minecraft 服务器管理"
+author: "Xaunli"
+version: "1.2.0"
+description: "通过 RCON 协议连接 Minecraft 服务器，支持多服务器管理、AI 自然语言控制、定时备份公告、性能监控与完整玩家管理。"
+repo_url: "https://github.com/Xaunli/astrbot_plugin_minecraft"
+license: "AGPL-3.0"
+
+support_platforms:
+  - aiocqhttp
+  - telegram
+  - discord
+
+astrbot_version: ">=4.16,<5"
